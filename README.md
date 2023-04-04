@@ -16,9 +16,9 @@ To test at runtime and verify the functionality, import the package, open RegFre
 
 ## Details
 
-As discussed in [Place the DLL](https://docshield.kofax.com/KTA/en_US/7.11.0-h49vd5omev/help/ScriptDocumentation/ScriptDocumentation/t_PlacetheDLL.html), the dll and external application manifest go under the Custom folder within the project folder (which is in a subfolder of %temp% when open in TD).  
+The [Create a registration-free COM DLL and manifest file](https://docshield.kofax.com/KTA/en_US/7.11.0-h49vd5omev/help/ScriptDocumentation/ScriptDocumentation/c_CreateaRegistrationFreeCOMDLLandManifestFile.html) topic mentions this external application manifest [(example)](https://github.com/smklancher/KofaxTransformationRegFreeComDll/blob/main/TransformationScript/application.manifest), but does not discuss the need for the embedded component/assembly manifest file [(example)](https://github.com/smklancher/KofaxTransformationRegFreeComDll/blob/main/DllSource/app.manifest).
 
-The [Create a registration-free COM DLL and manifest file](https://docshield.kofax.com/KTA/en_US/7.11.0-h49vd5omev/help/ScriptDocumentation/ScriptDocumentation/c_CreateaRegistrationFreeCOMDLLandManifestFile.html) topic mentions this external application manifest, but does not discuss the need for the embedded component/assembly manifest file, example [here](https://github.com/smklancher/KofaxTransformationRegFreeComDll/blob/main/DllSource/app.manifest).
+As discussed in [Place the DLL](https://docshield.kofax.com/KTA/en_US/7.11.0-h49vd5omev/help/ScriptDocumentation/ScriptDocumentation/t_PlacetheDLL.html), the dll and external application manifest go under the Custom folder within the project folder (which is in a subfolder of %temp% when open in TD).  
 
 The [Invoke the assembly](https://docshield.kofax.com/KTA/en_US/7.11.0-h49vd5omev/help/ScriptDocumentation/ScriptDocumentation/c_InvoketheAssembly.html) shows code to create an object from the reg free dll, however in the example [Transformation script](https://github.com/smklancher/KofaxTransformationRegFreeComDll/blob/main/TransformationScript/_ProjectClass.vb) here, the similar code is organized into a few different functions to try to make it a bit more understandable and reusable.  Note also the two required references that are not mentioned in the help topic:
 

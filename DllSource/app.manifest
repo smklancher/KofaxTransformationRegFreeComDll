@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+	Configure .NET Framework-Based COM Components for Registration-Free Activation
+	https://learn.microsoft.com/en-us/dotnet/framework/interop/configure-net-framework-based-com-components-for-reg
+
+	When Microsoft documentation mentions the "application manifest" this refers to the
+	external file that will be provided to the manifest activator in Transformation script.
+	https://learn.microsoft.com/en-us/dotnet/framework/interop/configure-net-framework-based-com-components-for-reg#create-an-application-manifest
+
+	When Microsoft documentation mentions the "component manifest" or the "assembly manifest" this
+	refers to the manifest file that is compiled into the COM visible .NET dll.
+	https://learn.microsoft.com/en-us/dotnet/framework/interop/configure-net-framework-based-com-components-for-reg#create-a-component-manifest
+
+	This file is the component/assembly manifest.
+-->
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+	<!-- This should exactly match the assemblyIdentity in the external application manifest. -->
+	<assemblyIdentity name="RegFreeTransformationDll" version="1.0.0.0" processorArchitecture="x86"></assemblyIdentity>
+	<!--
+		Define any classes here that need to be created in Transformation script via the manifest activator.
+
+		These attributes should match what is defined on the class.  clsid should match the GuidAttribute on the class.
+		progid matches the ProgIdAttribute on the class if defined, or the same as name if not specified.
+		-->
+	<clrClass
+		clsid="{efb13163-f3f9-4e56-8f90-2af836401c60}"
+		progid="RegFreeTransformationDll.ExampleClass"
+		threadingModel="Both"
+		name="RegFreeTransformationDll.ExampleClass"
+		runtimeVersion="v4.0.30319">
+	</clrClass>
+	<file name="RegFreeTransformationDll.dll" hashalg="SHA1"></file>
+</assembly>

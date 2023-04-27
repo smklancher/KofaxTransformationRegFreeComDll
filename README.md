@@ -24,3 +24,17 @@ The [Invoke the assembly](https://docshield.kofax.com/KTA/en_US/7.11.0-h49vd5ome
 
 * C:\Program Files (x86)\Common Files\Kofax\Components\Kofax.Transformation.Extensions.tlb
 * Required reference: C:\Windows\SysWOW64\scrrun.dll
+
+## Troubleshooting
+
+Since this example project is open and available it can be compared to your project to determine whatever differences there are.  The code and manifest files have a lot of comments specifically to help with this.
+
+The only element required in the [csproj file](https://github.com/smklancher/KofaxTransformationRegFreeComDll/blob/main/DllSource/RegFreeTransformationDll.csproj) itself is that it is told to actually use the included manifest file:
+
+```xml
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+```
+
+One notable element of the example csproj file itself is that it uses [SDK-style](https://learn.microsoft.com/en-us/dotnet/core/project-sdk/overview) format.  This is not required, but it makes the file much more terse and more easy to read and show as an example.  The SDK-style format is not used by default for new .NET Framework projects.  However new .NET Framework projects and can be created this way with a few minor extra steps:
+
+[How to create an SDK-style .NET Framework project in VS?](https://stackoverflow.com/a/63065708/221018)
